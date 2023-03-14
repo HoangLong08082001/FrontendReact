@@ -263,41 +263,7 @@ export default class Menu extends Component {
               <div
                 className="collapse navbar-collapse justify-content-between"
                 id="navbarCollapse"
-              >
-                <div className="navbar-nav mr-auto py-0">
-                  <a href="index.html" className="nav-item nav-link active">
-                    Trang chủ
-                  </a>
-                  <div className="nav-item dropdown">
-                    <a
-                      href="#/"
-                      className="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                    >
-                      Pages
-                    </a>
-                    <div className="dropdown-menu rounded-0 m-0">
-                      <a href="cart.html" className="dropdown-item">
-                        Giỏ hàng
-                      </a>
-                      <a href="checkout.html" className="dropdown-item">
-                        Checkout
-                      </a>
-                    </div>
-                  </div>
-                  <a href="contact.html" className="nav-item nav-link">
-                    Liên hệ
-                  </a>
-                </div>
-                <div className="navbar-nav ml-auto py-0">
-                  <a href className="nav-item nav-link">
-                    Đăng nhập
-                  </a>
-                  <a href className="nav-item nav-link">
-                    Đăng ký
-                  </a>
-                </div>
-              </div>
+              ></div>
             </nav>
             <div
               id="header-carousel"

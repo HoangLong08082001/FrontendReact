@@ -7,7 +7,6 @@ export default class IndexDetail extends Component {
     return (
       <div className="container-fluid py-5">
         <DetailProduct />
-        <ProductInfo />
       </div>
     );
   }

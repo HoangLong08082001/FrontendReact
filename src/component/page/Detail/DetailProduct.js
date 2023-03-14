@@ -1,73 +1,39 @@
 import React, { Component } from "react";
-
+import dl from "../../data.json";
 export default class DetailProduct extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="row px-xl-5">
-        <div className="col-lg-5 pb-5">
-          <div
-            id="product-carousel"
-            className="carousel slide"
-            data-ride="carousel"
-          >
-            <div className="carousel-inner border">
-              <div className="carousel-item active">
-                <img
-                  className="w-100 h-100"
-                  src="img/product-1.jpg"
-                  alt="author"
-                />
+        {dl.map((value, key) => {
+          if (value.id == this.props.id) {
+            return (
+              <div className="col-lg-5 pb-5">
+                <div
+                  id="product-carousel"
+                  className="carousel slide"
+                  data-ride="carousel"
+                >
+                  <div className="carousel-inner border">
+                    <div className="carousel-item active">
+                      <img
+                        className="w-100 h-100"
+                        src={value.hinh_sp}
+                        alt="author"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="font-weight-semi-bold">
+                  Colorful Stylish Shirt
+                </h3>
+
+                <h3 className="font-weight-semi-bold mb-4">$150.00</h3>
               </div>
-              <div className="carousel-item">
-                <img
-                  className="w-100 h-100"
-                  src="img/product-2.jpg"
-                  alt="author"
-                />
-              </div>
-              <div className="carousel-item">
-                <img
-                  className="w-100 h-100"
-                  src="img/product-3.jpg"
-                  alt="author"
-                />
-              </div>
-              <div className="carousel-item">
-                <img
-                  className="w-100 h-100"
-                  src="img/product-4.jpg"
-                  alt="author"
-                />
-              </div>
-            </div>
-            <a
-              className="carousel-control-prev"
-              href="#product-carousel"
-              data-slide="prev"
-            >
-              <i className="fa fa-2x fa-angle-left text-dark" />
-            </a>
-            <a
-              className="carousel-control-next"
-              href="#product-carousel"
-              data-slide="next"
-            >
-              <i className="fa fa-2x fa-angle-right text-dark" />
-            </a>
-          </div>
-        </div>
+            );
+          }
+        })}
         <div className="col-lg-7 pb-5">
-          <h3 className="font-weight-semi-bold">Colorful Stylish Shirt</h3>
-          <div className="d-flex mb-3">
-            <div className="text-primary mr-2">
-              <small className="fas fa-star" />
-              <small className="fas fa-star" />
-              <small className="fas fa-star" />
-              <small className="fas fa-star-half-alt" />
-              <small className="far fa-star" />
-            </div>
-          </div>
-          <h3 className="font-weight-semi-bold mb-4">$150.00</h3>
           <div className="d-flex mb-3">
             <p className="text-dark font-weight-medium mb-0 mr-3">Phien Ban:</p>
             <form>

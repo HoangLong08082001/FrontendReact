@@ -34,8 +34,7 @@ export default class Navbar extends Component {
           </div>
           <div className="col-lg-3 col-6 text-right">
             <Link to={"/cart"} className="btn border">
-              <i className="fas fa-shopping-cart text-primary" />
-              <span className="badge">0</span>
+              CART (0)
             </Link>
           </div>
         </div>
