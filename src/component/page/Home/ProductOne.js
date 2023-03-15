@@ -27,6 +27,7 @@ export default class ProductOne extends Component {
         return (
           <SanPham
             key={key}
+            id_sp={value.id_sp}
             hinh_sp={value.hinh_sp}
             ten_sp={value.ten_sp}
             gia_sp={value.gia_sp}

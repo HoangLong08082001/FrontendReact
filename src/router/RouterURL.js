@@ -15,7 +15,7 @@ function RouterURL() {
         <Route path="/thuonghieu" element={<IndexShop />} />
         <Route path="/cart" element={<IndexCart />} />
         <Route path="/contract" element={<IndexContract />} />
-        <Route path="/chi-tiet-san-pham/:id.html" element={<IndexDetail />} />
+        <Route path="/chitiet/:id_sp.html" element={<IndexDetail />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>

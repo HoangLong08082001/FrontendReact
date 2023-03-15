@@ -15,8 +15,8 @@ export default class SanPham extends Component {
             </div>
           </div>
           <div className="card-footer d-flex justify-content-between bg-light border">
-            <a
-              href={
+            <Link
+              to={
                 "/chitiet/" +
                 this.props.ten_sp +
                 "." +
@@ -27,7 +27,7 @@ export default class SanPham extends Component {
             >
               <i className="fas fa-eye text-primary mr-1" />
               Chi tiết
-            </a>
+            </Link>
             <a href="/cart" className="btn btn-sm text-dark p-0">
               <i className="fas fa-shopping-cart text-primary mr-1" />
               Thêm giỏ hàng

@@ -1,38 +1,49 @@
 import React, { Component } from "react";
 import dl from "../../data.json";
+import axios from "axios";
+import DetailList from "./DetailsProductList/DetailList";
+const getDataProduct = () =>
+  axios.get("http://localhost:5000/test").then((res) => res.data);
 export default class DetailProduct extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+    };
+  }
+  componentWillMount = () => {
+    if (this.state.data === null) {
+      getDataProduct().then((res) => {
+        this.setState({
+          data: res,
+        });
+      });
+    }
+  };
+
+  printData = () => {
+    if (this.state.data !== null) {
+      return this.state.data.map((value, key) => {
+        if (value.id === this.props.id_sp)
+          return (
+            <DetailList
+              key={key}
+              id_sp={value.id_sp}
+              hinh_sp={value.hinh_sp}
+              ten_sp={value.ten_sp}
+              gia_sp={value.gia_sp}
+            />
+          );
+      });
+    }
+  };
   render() {
     console.log(this.props);
     return (
       <div className="row px-xl-5">
-        {dl.map((value, key) => {
-          if (value.id == this.props.id) {
-            return (
-              <div className="col-lg-5 pb-5">
-                <div
-                  id="product-carousel"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <div className="carousel-inner border">
-                    <div className="carousel-item active">
-                      <img
-                        className="w-100 h-100"
-                        src={value.hinh_sp}
-                        alt="author"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <h3 className="font-weight-semi-bold">
-                  Colorful Stylish Shirt
-                </h3>
-
-                <h3 className="font-weight-semi-bold mb-4">$150.00</h3>
-              </div>
-            );
-          }
-        })}
+        {/* begin product */}
+        {this.printData()}
+        {/* end product */}
         <div className="col-lg-7 pb-5">
           <div className="d-flex mb-3">
             <p className="text-dark font-weight-medium mb-0 mr-3">Phien Ban:</p>
